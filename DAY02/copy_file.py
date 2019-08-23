@@ -15,7 +15,7 @@ def copy1():
     fw = open('file1.png','wb') 
 
     while True:
-        if n < 1024:
+        if n < 1024:             #如果一次性读取n，那么会占用大量的内存，为了解决这个问题，可以一次读取1024个字节，直到当n减少到小于1024后直接读取n
             data = f.read(n)
             fw.write(data)
             break
@@ -30,7 +30,7 @@ def copy2():
     f = open(filename,'rb')
     fw = open('file2.png','wb')
 
-    f.seek(size//2,0)
+    f.seek(size//2,0)   #将文件读取的偏移量后移一半．
     while True:
         data = f.read(1024)
         if not data:

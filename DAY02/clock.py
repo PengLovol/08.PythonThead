@@ -4,7 +4,7 @@ import time
 class ClockProcess(Process):
     def __init__(self,value):
         self.value = value 
-        super().__init__()  #加载父类的引用方法
+        super().__init__()  #=super(ClockProcess,self),加载父类的引用方法
 
     #重写run方法
     def run(self):

@@ -18,6 +18,6 @@ print("Process PID:",p.pid) #父进程获取子进程进程PID
 #进程alive情况
 print("Process is alive:",p.is_alive())
 
-p.join(3)
+p.join(3)                           #超时检测
 print("==================")
 

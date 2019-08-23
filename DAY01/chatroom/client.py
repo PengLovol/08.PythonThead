@@ -9,7 +9,7 @@ def send_msg(s,name,addr):
         if text.strip() == 'quit':
             msg = 'Q ' + name
             s.sendto(msg.encode(),addr)
-            sys.exit("退出聊天室") 
+            sys.exit("退出聊天室")                #只是子进程退出了，父进程还没有处理．
                       
         msg = 'C %s %s'%(name,text)
         s.sendto(msg.encode(),addr)
@@ -19,7 +19,7 @@ def recv_msg(s):
     while True:
         data,addr = s.recvfrom(2048)
         if data.decode() == 'EXIT':
-            sys.exit(0)
+            sys.exit(0)                      #父进程也退出.
         print(data.decode() + "\n发言:",end="") 
 
 #创建套接字,登录,创建子进程

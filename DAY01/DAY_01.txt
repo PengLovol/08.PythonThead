@@ -91,8 +91,8 @@ multiprocessing 模块创建进程
 Process()
 功能 ： 创建进程对象
 参数 ： name  进程名称  Process-1
-        target  绑定函数 
-	args  元组  给target函数按照位置传参
+       target  绑定函数
+	    args  元组  给target函数按照位置传参
         kwargs  字典  给target函数按照键值对传参
 
 p.start()
