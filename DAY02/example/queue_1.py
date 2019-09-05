@@ -13,4 +13,5 @@ q.put(3)
 print(q.qsize())
 #q.put(4,False,3)
 print(q.get())
+print(q.get())
 q.close() #关闭队列

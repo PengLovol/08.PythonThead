@@ -7,7 +7,9 @@ fd1,fd2 = Pipe(False)
 def fun(name):
     time.sleep(3)
     #向管道写入内容
-    fd2.send([1,2,3,4,5])
+    #fd2.send([1,2,3,4,5])
+    fd2.send('hello '+str(name))
+
 
 jobs = []
 for i in range(5):

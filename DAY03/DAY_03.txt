@@ -28,7 +28,7 @@
 
 import signal
 
-signal.alarm(sec)
+signal.alarm(sec)           #默认关闭进程
 功能 ： 向自身发送时钟信号 --》 SIGALRM
 参数 ： sec  时钟时间
 
