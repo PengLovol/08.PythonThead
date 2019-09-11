@@ -5,7 +5,7 @@ from time import sleep
 
 def saler_handler(sig,frame):
     if sig == SIGINT:
-        os.kill(os.getppid(),SIGUSR1)
+        os.kill(os.getppid(),SIGUSR1)    #给父进程发送信号
     elif sig == SIGQUIT:
         os.kill(os.getppid(),SIGUSR2)
     elif sig == SIGUSR1:

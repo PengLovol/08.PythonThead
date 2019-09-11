@@ -20,7 +20,7 @@ class FtpServer(object):
 
     def do_list(self):
         #获取文件列表
-        file_list = os.listdir(FILE_PATH)
+        file_list = os.listdir(FILE_PATH)  #获取文件路径下的文件列表
         if not file_list:
             self.connfd.send("文件库为空".encode()) 
             return 
@@ -31,9 +31,9 @@ class FtpServer(object):
         files = ''
         for file in file_list:
             if file[0] != '.' and \
-            os.path.isfile(FILE_PATH + file):
+            os.path.isfile(FILE_PATH + file): #不是隐藏文件同时是普通文件
                 files = files + file + '#'
-        self.connfd.sendall(files.encode())
+        self.connfd.sendall(files.encode())   #将文件名用#号连接成一个大的字符串并且发送给客户端
 
     def do_get(self,filename):
         try:
@@ -68,7 +68,7 @@ def main():
         try:
 
             connfd,addr = sockfd.accept()
-        except KeyboardInterrupt:
+        except KeyboardInterrupt:             #
             sockfd.close()
             sys.exit("服务器退出")
         except Exception as e:

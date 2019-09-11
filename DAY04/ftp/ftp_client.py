@@ -29,7 +29,7 @@ class FtpClient(object):
             fd = open(filename,'wb')
             while True:
                 data = self.sockfd.recv(1024)
-                if data == b'##':
+                if data == b'##':                       #由服务端发送表示文件发送完毕
                     break
                 fd.write(data)
             fd.close()

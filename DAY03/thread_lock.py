@@ -15,7 +15,7 @@ t = threading.Thread(target = value)
 t.start()
 
 while True:
-    #
+    #with方式上锁
     with lock:
         a += 1
         b += 1

@@ -32,11 +32,11 @@ while True:
         s.close()
         sys.exit("服务器退出")
     except Exception:
-        traceback.print_exc()
+        traceback.print_exc()                          #功能 ： 更详细的打印异常信息
         continue 
 
     t = Thread(target = handler,args = (connfd,))
-    t.setDaemon(True)
+    t.setDaemon(True)                                 #主线程结束后分支线程自动结束
     t.start()
 
 

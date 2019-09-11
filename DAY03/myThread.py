@@ -3,9 +3,9 @@ from time import sleep,ctime
 
 class MyThread(Thread):
     def __init__(self,target,name = 'tedu',\
-        args = (),kwargs = {}):
+        args = (),kwargs = {}):                      #形参有默认值，可传可不传
 
-        super().__init__()
+        super().__init__()                           #继承父类
         self.name = name
         self.target = target
         self.args = args

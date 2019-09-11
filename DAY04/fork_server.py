@@ -37,7 +37,7 @@ signal.signal(signal.SIGCHLD,signal.SIG_IGN)
 while True:
     try:
         c,addr = s.accept()
-    except KeyboardInterrupt:
+    except KeyboardInterrupt:   #按ctrl c 优雅的退出
         sys.exit("服务器退出")
     except Exception as e:
         print("Error:",e)

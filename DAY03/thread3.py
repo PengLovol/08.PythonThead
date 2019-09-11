@@ -8,7 +8,7 @@ def fun():
 
 t = Thread(target = fun)
 
-t.setDaemon(True) 
+t.setDaemon(True)    #设置为True 则分支线程随主线程退出
 print(t.isDaemon())  
 
 t.start()

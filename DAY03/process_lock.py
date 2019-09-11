@@ -14,7 +14,7 @@ def writer2():
         sys.stdout.write("writer2想先向终端写入\n")
     lock.release()
 
-lock = Lock()
+lock = Lock()                             #创建锁对象
 
 w1 = Process(target = writer1)
 w2 = Process(target = writer2)

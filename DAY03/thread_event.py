@@ -6,8 +6,9 @@ e = threading.Event()
 
 def bar():
     print("bar拜山头")
-    global s 
+    global s
     s = "天王盖地虎"
+    print(s)
 
 def foo():
     print("说出口令就是自己人")
@@ -31,5 +32,6 @@ f.start()
 e.wait() #运行b f之后其他内容不许执行
 
 fun()
+print(s)
 b.join()
 f.join()

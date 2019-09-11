@@ -51,7 +51,7 @@ class HTTPServer(object):
         #接收客户端请求
         request = connfd.recv(4096)
         #解析请求内容
-        requestHeaders = request.splitlines()
+        requestHeaders = request.splitlines()               #按行进行切割
         print(connfd.getpeername(),":",requestHeaders[0])
 
         #获取具体请求内容
